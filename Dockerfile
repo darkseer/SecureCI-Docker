@@ -1,7 +1,7 @@
 FROM jenkins.darkseer.org/centos:latest
 
 RUN yum -y update; yum clean all
-RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget; yum clean all
+RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip; yum clean all
 RUN useradd jenkins
 RUN mkdir -p /root/.ssh
 RUN mkdir -p /home/jenkins/.ssh
