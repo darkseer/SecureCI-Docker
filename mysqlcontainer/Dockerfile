@@ -12,7 +12,7 @@ RUN wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
 RUN rpm -i mysql57-community-release-el7-9.noarch.rpm
 RUN rm /etc/yum.repos.d/mysql-community.repo
 ADD ./mysql-community.repo /etc/yum.repos.d/mysql-community.repo
-RUN cat "192.168.1.15 jenkins.darkseer.org" >> /etc/hosts
+RUN echo 192.168.1.15 jenkins.darkseer.org >> /etc/hosts
 RUN yum install -y mysql-community-client mysql-community-server
 RUN /rootpass.sh
 RUN rm -f /rootpass.sh
