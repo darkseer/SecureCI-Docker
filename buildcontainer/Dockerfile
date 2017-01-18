@@ -30,5 +30,6 @@ RUN wget https://services.gradle.org/distributions/gradle-3.3-bin.zip
 RUN unzip -d /opt/ gradle-3.3-bin.zip
 RUN rm -f gradle-3.3-bin.zip
 RUN ln -s /opt/gradle-3.3 /opt/gradle
+RUN ln -s /opt/gradle/bin/gradle /usr/bin/gradle
 
 ENTRYPOINT ["/bin/bash"]
