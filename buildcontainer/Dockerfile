@@ -15,7 +15,7 @@ ADD ./authorized_keys /root/.ssh/authorized_keys
 ADD ./authorized_keys /home/jenkins/.ssh/authorized_keys
 ADD ./gradle-env.sh /etc/profile.d/
 ADD ./sudoers /etc/sudoers
-RUN chown 440 /etc/sudoers
+RUN chmod 440 /etc/sudoers
 RUN chmod 755 /etc/profile.d/gradle-env.sh
 RUN chown -R jenkins:jenkins /home/jenkins
 RUN chmod 755 /start.sh
