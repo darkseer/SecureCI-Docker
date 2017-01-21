@@ -1,7 +1,7 @@
 FROM jenkins.darkseer.org:444/centos:latest
 
 RUN yum -y update; yum clean all
-RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip git ca-certificates; yum clean all
+RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip git ca-certificatesn openssl; yum clean all
 RUN useradd jenkins
 RUN mkdir -p /root/.ssh
 RUN mkdir -p /home/jenkins/.ssh
@@ -34,7 +34,8 @@ RUN cp /opt/gradle/bin/gradle /opt/gradle/bin/gradle.bin
 ADD ./gradlewrapper.sh /opt/gradle/bin/gradle
 RUN chmod 755 /opt/gradle/bin/gradle
 RUN ln -s /opt/gradle/bin/gradle /usr/bin/gradle
-
+ADD ./addtohosts.sh /addtohosts.sh
+RUN chmod 755 /addtohosts.sh; /addtohosts.sh; rm /addtohosts.sh
 
 
 ENTRYPOINT ["/bin/bash"]
