@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "jenkins.darkseer.org 192.168.1.15" >> /etc/hosts
+echo "192.168.1.15  jenkins.darkseer.org" >> /etc/hosts

@@ -34,6 +34,8 @@ RUN cp /opt/gradle/bin/gradle /opt/gradle/bin/gradle.bin
 ADD ./gradlewrapper.sh /opt/gradle/bin/gradle
 RUN chmod 755 /opt/gradle/bin/gradle
 RUN ln -s /opt/gradle/bin/gradle /usr/bin/gradle
+ADD ./addtohosts.sh /addtohosts.sh
+RUN chmod 755 /addtohosts.sh; /addtohosts.sh; rm -f /addtohosts.sh
 
 
 ENTRYPOINT ["/bin/bash"]
