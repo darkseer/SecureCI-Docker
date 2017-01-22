@@ -1,3 +1,2 @@
 #!/bin/bash
-/opt/tomcat9/bin/catalina.sh start
-/bin/cat
+/opt/tomcat9/bin/catalina.sh run
