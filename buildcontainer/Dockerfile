@@ -7,7 +7,7 @@ RUN mkdir -p /root/.ssh
 RUN mkdir -p /home/jenkins/.ssh
 RUN rm -f /etc/ssh/sshd_config
 ADD ./sshd_config /etc/ssh/sshd_config
-ADD ./jdk-8u112-linux-x64.rpm /jdk-8u112-linux-x64.rpm
+ADD ../bin/jdk-8u112-linux-x64.rpm /jdk-8u112-linux-x64.rpm
 ADD ./rootpass.sh /rootpass.sh
 ADD ./jenkinspass.sh /jenkinspass.sh
 ADD ./start.sh /start.sh
