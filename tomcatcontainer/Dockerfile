@@ -8,7 +8,7 @@ RUN mkdir -p /home/tomcat/.ssh
 RUN rm -f /etc/ssh/sshd_config
 ADD ./sshd_config /etc/ssh/sshd_config
 ADD ./jdk-8u112-linux-x64.rpm /jdk-8u112-linux-x64.rpm
-ADD ./apache-tomcat-9.0.0.M17.tar.gz /apache-tomcat-9.0.0.M17.tar.gz
+ADD ./apache-tomcat-9.0.0.M17.tar.gz /opt/apache-tomcat-9.0.0.M17.tar.gz
 ADD ./rootpass.sh /rootpass.sh
 ADD ./tomcat.sh /tomcat.sh
 ADD ./start.sh /start.sh
@@ -23,6 +23,6 @@ RUN chmod 755 /tomcat.sh
 RUN rpm -i /jdk-8u112-linux-x64.rpm; rm -f /jdk-8u112-linux-x64.rpm
 RUN /rootpass.sh; rm -f /rootpass.sh; /tomcat.sh; rm -f /tomcat.sh
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N '' 
-RUN cd /opt/ ; tar xzvf /apache-tomcat-9.0.0.M17.tar.gz ; ln -s apache-tomcat-9.0.0.M17 tomcat9
+RUN cd /opt/ ln -s apache-tomcat-9.0.0.M17 tomcat9
 
 ENTRYPOINT ["/start.sh"]
