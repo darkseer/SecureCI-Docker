@@ -23,6 +23,6 @@ RUN chmod 755 /tomcat.sh
 RUN rpm -i /jdk-8u112-linux-x64.rpm; rm -f /jdk-8u112-linux-x64.rpm
 RUN /rootpass.sh; rm -f /rootpass.sh; /tomcat.sh; rm -f /tomcat.sh
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N '' 
-RUN cd /opt/; tar xzvf /opt/apache-tomcat-9.0.0.M17.tar.gz; ln -s apache-tomcat-9.0.0.M17 tomcat9
+RUN cd /opt/; tar xzvf /opt/apache-tomcat-9.0.0.M17.tar.gz; ln -s apache-tomcat-9.0.0.M17 tomcat9; chown -R tomcat:tomcat /opt/tomcat9
 
 ENTRYPOINT ["/start.sh"]
