@@ -1,7 +1,7 @@
 FROM jenkins.darkseer.org:444/centos:latest
 
 RUN yum -y update; yum clean all
-RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip sudo; yum clean all
+RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip sudo net-tools; yum clean all
 RUN useradd tomcat
 RUN mkdir -p /root/.ssh
 RUN mkdir -p /home/tomcat/.ssh
