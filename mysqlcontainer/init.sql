@@ -1,0 +1,4 @@
+CREATE database speaker;
+CREATE USER 'speaker'@'%' IDENTIFIED BY 'test123';
+GRANT ALL PRIVILEGES ON speaker.* TO 'speaker'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
