@@ -11,6 +11,7 @@ ADD ./rootpass.sh /rootpass.sh
 ADD ./start.sh /start.sh
 ADD ./authorized_keys /root/.ssh/authorized_keys
 ADD ./authorized_keys /home/tomcat/.ssh/authorized_keys
+ADD ./server.cnf /etc/my.cnf.d/server.cnf
 ADD ./init.sql /init.sql
 RUN chmod 755 /start.sh
 RUN chmod 755 /rootpass.sh
