@@ -2,10 +2,11 @@
 
 # this is read by the standalone daemon and embedded servers
 [server]
-
+ sql-mode='ALLOW_INVALID_DATES'
+ 
 # this is only for the mysqld standalone daemon
 [mysqld]
- sql-mode="" 
+ sql-mode='ALLOW_INVALID_DATES'
  
 # this is only for embedded server
 [embedded]
@@ -14,13 +15,13 @@
 # If you use the same .cnf file for MariaDB of different versions,
 # use this group for options that older servers don't understand
 [mysqld-5.5]
- sql-mode="" 
+ sql-mode='ALLOW_INVALID_DATES'
  
 # These two groups are only read by MariaDB servers, not by MySQL.
 # If you use the same .cnf file for MySQL and MariaDB,
 # you can put MariaDB-only options here
 [mariadb]
- sql-mode="" 
+ sql-mode='ALLOW_INVALID_DATES' 
  
 [mariadb-5.5]
- sql-mode="" 
+ sql-mode='ALLOW_INVALID_DATES' 
