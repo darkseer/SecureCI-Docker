@@ -7,9 +7,9 @@
 until mysqladmin ping >/dev/null 2>&1; do
   echo -n "."; sleep 0.2
 done
-
+mysql_pid=$!
 # Init DB and first user
 mysql mysql < init.sql
 
 # put db in forground to hang process
-fg
+wait $mysql_pid
