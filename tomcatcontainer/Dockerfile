@@ -4,7 +4,7 @@ RUN yum -y update; yum clean all
 RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip sudo net-tools; yum clean all
 RUN useradd tomcat
 RUN mkdir -p /root/.ssh
-RUN mkdir -p /home/tomcat/.ssh
+RUN mkdir -p /home/tomcat/.ssh; mkdir -p /home/tomcat/tmp
 RUN rm -f /etc/ssh/sshd_config
 ADD ./sshd_config /etc/ssh/sshd_config
 ADD ./jdk-8u112-linux-x64.rpm /jdk-8u112-linux-x64.rpm
