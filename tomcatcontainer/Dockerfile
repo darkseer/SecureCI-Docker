@@ -1,4 +1,4 @@
-FROM jenkins.darkseer.org:444/centos:latest
+FROM centos:latest
 
 RUN yum -y update; yum clean all
 RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip sudo net-tools; yum clean all

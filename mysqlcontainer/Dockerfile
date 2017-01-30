@@ -1,4 +1,4 @@
-FROM jenkins.darkseer.org:444/centos:latest
+FROM centos:latest
 
 ADD ./mariadb.repo /etc/yum.repos.d/mariadb.repo
 RUN yum -y update; yum clean all
