@@ -14,6 +14,7 @@ ADD ./start.sh /start.sh
 ADD ./authorized_keys /root/.ssh/authorized_keys
 ADD ./authorized_keys /home/jenkins/.ssh/authorized_keys
 ADD ./gradle-env.sh /etc/profile.d/
+ADD ./maven-env.sh /etc/profile.d/
 ADD ./sudoers /etc/sudoers
 RUN chmod 440 /etc/sudoers
 RUN chmod 755 /etc/profile.d/gradle-env.sh
@@ -36,6 +37,7 @@ RUN cp /opt/gradle/bin/gradle /opt/gradle/bin/gradle.bin
 ADD ./gradlewrapper.sh /opt/gradle/bin/gradle
 RUN chmod 755 /opt/gradle/bin/gradle
 RUN ln -s /opt/gradle/bin/gradle /usr/bin/gradle
+RUN cd /opt; wget http://mirror.nexcess.net/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz; tar xzvf apache-maven-3.3.9-bin.tar.gz; rm -f apache-maven-3.3.9-bin.tar.gz; ln -s apache-maven-3.3.9 maven
 
 
 ENTRYPOINT ["/bin/bash"]
