@@ -39,5 +39,4 @@ RUN chmod 755 /opt/gradle/bin/gradle
 RUN ln -s /opt/gradle/bin/gradle /usr/bin/gradle
 RUN cd /opt; wget http://mirror.nexcess.net/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz; tar xzvf apache-maven-3.3.9-bin.tar.gz; rm -f apache-maven-3.3.9-bin.tar.gz; ln -s apache-maven-3.3.9 maven
 
-
 ENTRYPOINT ["/bin/bash"]
