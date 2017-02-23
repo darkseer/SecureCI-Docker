@@ -7,7 +7,7 @@ RUN mkdir -p /root/.ssh
 RUN mkdir -p /home/tomcat/.ssh; mkdir -p /home/tomcat/tmp
 RUN rm -f /etc/ssh/sshd_config
 ADD ./sshd_config /etc/ssh/sshd_config
-ADD ./jdk-8u112-linux-x64.rpm /jdk-8u112-linux-x64.rpm
+RUN wget https://s3.amazonaws.com/secureci-demo/jdk.rpm -O /jdk-8u112-linux-x64.rpm
 COPY ./apache-tomcat-9.0.0.M17.tar.gz /opt/apache-tomcat-9.0.0.M17.tar.gz
 ADD ./rootpass.sh /rootpass.sh
 ADD ./tomcat.sh /tomcat.sh
