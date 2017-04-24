@@ -1,7 +1,7 @@
 FROM centos:latest
 
 RUN yum -y update; yum clean all
-RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip git ca-certificatesn openssl sudo which; yum clean all
+RUN yum -y install uuid openssh-server openssh-clients passwd initscripts wget unzip git ca-certificatesn openssl sudo which firefox Xvfb; yum clean all
 RUN useradd jenkins
 RUN mkdir -p /root/.ssh
 RUN mkdir -p /home/jenkins/.ssh
@@ -13,9 +13,11 @@ ADD ./jenkinspass.sh /jenkinspass.sh
 ADD ./start.sh /start.sh
 ADD ./authorized_keys /root/.ssh/authorized_keys
 ADD ./authorized_keys /home/jenkins/.ssh/authorized_keys
+ADD ./geckodriver /usr/bin
 ADD ./gradle-env.sh /etc/profile.d/
 ADD ./maven-env.sh /etc/profile.d/
 ADD ./sudoers /etc/sudoers
+RUN chown root:root /usr/bin/geckodriver; chmod 755 /usr/bin/geckodriver
 RUN chmod 440 /etc/sudoers
 RUN chmod 755 /etc/profile.d/gradle-env.sh
 RUN chown -R jenkins:jenkins /home/jenkins
