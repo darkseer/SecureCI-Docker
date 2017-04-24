@@ -17,7 +17,7 @@ ADD ./geckodriver /usr/bin
 ADD ./gradle-env.sh /etc/profile.d/
 ADD ./maven-env.sh /etc/profile.d/
 ADD ./sudoers /etc/sudoers
-RUN chown root:root /usr/bin/geckodriver; chmod 755 /usr/bin/geckodriver; mkdir /var/lib/jenkins
+RUN chown root:root /usr/bin/geckodriver; chmod 755 /usr/bin/geckodriver; mkdir /var/lib/jenkins; dbus-uuidgen > /etc/machine-id; 
 RUN chmod 440 /etc/sudoers
 RUN chmod 755 /etc/profile.d/gradle-env.sh
 RUN chown -R jenkins:jenkins /home/jenkins
