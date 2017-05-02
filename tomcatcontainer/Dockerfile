@@ -15,6 +15,7 @@ ADD ./start.sh /start.sh
 ADD ./authorized_keys /root/.ssh/authorized_keys
 ADD ./authorized_keys /home/tomcat/.ssh/authorized_keys
 ADD ./sudoers /etc/sudoers
+ADD jacoco-agent.jar /opt/tomcat9/lib/
 RUN chmod 440 /etc/sudoers
 RUN chown -R tomcat:tomcat /home/tomcat
 RUN chmod 755 /start.sh
