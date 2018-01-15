@@ -39,6 +39,6 @@ RUN cp /opt/gradle/bin/gradle /opt/gradle/bin/gradle.bin
 ADD ./gradlewrapper.sh /opt/gradle/bin/gradle
 RUN chmod 755 /opt/gradle/bin/gradle
 RUN ln -s /opt/gradle/bin/gradle /usr/bin/gradle
-RUN cd /opt; wget http://mirror.nexcess.net/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz; tar xzvf apache-maven-3.3.9-bin.tar.gz; rm -f apache-maven-3.3.9-bin.tar.gz; ln -s apache-maven-3.3.9 maven
+RUN cd /opt; wget http://apache.osuosl.org/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz; tar xzvf apache-maven-3.5.2-bin.tar.gz; rm -f apache-maven-3.5.2-bin.tar.gz; ln -s apache-maven-3.5.2 maven
 
 ENTRYPOINT ["/bin/bash"]
