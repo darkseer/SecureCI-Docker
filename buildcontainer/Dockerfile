@@ -41,5 +41,6 @@ RUN chmod 755 /opt/gradle/bin/gradle
 RUN ln -s /opt/gradle/bin/gradle /usr/bin/gradle
 RUN cd /opt; wget http://apache.osuosl.org/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz; tar xzvf apache-maven-3.5.2-bin.tar.gz; rm -f apache-maven-3.5.2-bin.tar.gz; ln -s apache-maven-3.5.2 maven
 RUN mkdir /.mozilla; chmod 777 /.mozilla
+RUN rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 ENTRYPOINT ["/bin/bash"]
