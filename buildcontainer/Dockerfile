@@ -14,6 +14,7 @@ ADD ./start.sh /start.sh
 ADD ./authorized_keys /root/.ssh/authorized_keys
 ADD ./authorized_keys /home/jenkins/.ssh/authorized_keys
 ADD ./geckodriver /usr/bin
+ADD ./chromedriver /usr/bin
 ADD ./gradle-env.sh /etc/profile.d/
 ADD ./maven-env.sh /etc/profile.d/
 ADD ./sudoers /etc/sudoers
