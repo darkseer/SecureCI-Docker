@@ -43,4 +43,4 @@ RUN cd /opt; wget http://apache.osuosl.org/maven/maven-3/3.5.2/binaries/apache-m
 RUN mkdir /.mozilla; chmod 777 /.mozilla
 RUN rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/bin/bash"]
