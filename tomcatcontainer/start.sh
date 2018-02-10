@@ -5,3 +5,4 @@ echo ${MYSQL_PORT} | sed -e 's/tcp:\(\/\/.*\)/db.url=jdbc:mysql:\1\/speaker/g' >
 echo "" >> /opt/tomcat9/lib/env.properties
 export JAVA_OPTS="${JAVA_OPTS} -javaagent:/home/jacoco/lib/jacoco-agent.jar=destfile=/home/tomcat/tmp/jacoco-it.exec,append=true,includes=com.coveros.*"
 /opt/tomcat9/bin/catalina.sh run
+chmod a+rw /home/tomcat/tmp/jacoco*
