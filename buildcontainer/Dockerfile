@@ -2,7 +2,8 @@ FROM centos:latest
 
 ADD chrome.repo /etc/yum.repos.d/chrome.repo
 RUN yum -y update; yum clean all
-RUN yum -y install  google-chrome-stable uuid openssh-server openssh-clients passwd initscripts wget unzip git ca-certificatesn openssl sudo which firefox Xvfb; yum clean all
+RUN yum -y install  openssh-server openssh-clients passwd initscripts wget unzip git ca-certificatesn openssl sudo which firefox Xvfb; yum clean all
+RUN yum -y install  google-chrome-stable --skip-broken
 RUN useradd jenkins
 RUN mkdir -p /root/.ssh
 RUN mkdir -p /home/jenkins/.ssh
